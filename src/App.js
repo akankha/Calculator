@@ -23,11 +23,53 @@ function reducer(state,{type,payload}){
         ...state,
       currentOperand:`${state.currentOperand||""}${payload.digit}`,
     }
+    
+    case ACTIONS.CHOOSE_OPERATION:
+      if(state.currentOperand == null && state.previousOperand == null){
+        return state
+      }
+      if (state.previousOperand == null){
+        return {
+          ...state,
+          operation:payload.operation,
+          previousOperand:state.currentOperand,
+          currentOperand:null
+        }
+      }
+      return {
+        ...state,
+        previousOperand:evaluate(state),
+        operation:payload.operation,
+        currentOperand:null
+
+      }
     case ACTIONS.CLEAR:
       return {...state,
-        currentOperand:0}
+        currentOperand:0,previousOperand:null,operation:null}
     default:
   }
+}
+function evaluate(previousOperand,currentOperand,operation){
+  const prev=parseFloat(previousOperand);
+  const currt=parseFloat(currentOperand);
+  if(isNaN(prev) || isNaN(currt)) return "";
+  let computation = "";
+  switch (operation){
+    case "+":
+      computation=prev+currt
+      break
+    case "-":
+      computation=prev-currt
+      break
+      case "/":
+        computation=prev/currt
+      break
+       case "*":
+        computation=prev*currt
+      break
+      default :
+  }
+  return computation.toString();
 }
 
 function App() {
