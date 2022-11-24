@@ -7,12 +7,19 @@ export const ACTIONS= {
   CHOOSE_OPERATION:"choose-operation",
   CLEAR:"clear",
   DELETE_DIGIT:"delete-digit",
-  EVALUATE:"evaluate"
+  EVALUATE:"evaluate",
 }
 
 function reducer(state,{type,payload}){
   switch(type){
     case ACTIONS.ADD_DIGIT:
+      if(state.overwrite){
+          return{
+            ...state,
+            currentOperand:payload.digit,
+            overwrite:false,
+          }
+        }
       if(payload.digit ==="0" && state.currentOperand==="0") {
         return state}
 
@@ -28,31 +35,52 @@ function reducer(state,{type,payload}){
       if(state.currentOperand == null && state.previousOperand == null){
         return state
       }
+      if(state.currentOperand == null ){
+        return {
+          ...state,
+          operation:payload.operation,
+        }
+      }
       if (state.previousOperand == null){
         return {
           ...state,
           operation:payload.operation,
           previousOperand:state.currentOperand,
-          currentOperand:null
+          currentOperand:null,
         }
       }
       return {
         ...state,
         previousOperand:evaluate(state),
         operation:payload.operation,
-        currentOperand:null
+        currentOperand:null,
 
       }
     case ACTIONS.CLEAR:
-      return {...state,
-        currentOperand:0,previousOperand:null,operation:null}
+      return {}
     default:
+    case ACTIONS.EVALUATE:
+      if(
+        state.operation == null ||
+        state.currentOperand == null ||
+        state.previousOperand == null)
+        {
+          return state
+        }
+        return{
+          ...state,
+          overwrite:true,
+          previousOperand:null,
+          operation:null,
+          currentOperand:evaluate(state),
+        }
+      
   }
 }
-function evaluate(previousOperand,currentOperand,operation){
-  const prev=parseFloat(previousOperand);
-  const currt=parseFloat(currentOperand);
-  if(isNaN(prev) || isNaN(currt)) return "";
+function evaluate({previousOperand,currentOperand,operation}){
+  const prev=parseFloat(previousOperand)
+  const currt=parseFloat(currentOperand)
+  if(isNaN(prev) || isNaN(currt)) return ""
   let computation = "";
   switch (operation){
     case "+":
@@ -61,13 +89,12 @@ function evaluate(previousOperand,currentOperand,operation){
     case "-":
       computation=prev-currt
       break
-      case "/":
+    case "/":
         computation=prev/currt
       break
-       case "*":
+    case "*":
         computation=prev*currt
-      break
-      default :
+      break 
   }
   return computation.toString();
 }
@@ -103,7 +130,12 @@ function App() {
       <OperationButton operation="-" dispatch={dispatch}/>
       <DigitButton digit="." dispatch={dispatch}/>
       <DigitButton digit="0" dispatch={dispatch}/>
-      <button className="span-two">=</button>
+      <button
+        className="span-two"
+        onClick={() => dispatch({ type: ACTIONS.EVALUATE })}
+      >
+        =
+        </button>
     </div>
   );
 }
