@@ -5,7 +5,11 @@ Certainly! Here's a sample README.md for your GitHub repository "Calculator" bui
 
 A simple calculator web application built using React with state management through `useReducer`, component composition, and event handling.
 
-![Calculator Demo](https://cdn-useast1.kapwing.com/teams/65188f7584af61deda3fbbfa/jobs/65188f789447ebc52db4dacd/final_65188f7673fd5094916d0ec2_830041.gif?GoogleAccessId=prod-sa-videoprocessing%40kapwing-prod.iam.gserviceaccount.com&Expires=1696713247&Signature=bvYU2yY94Q2UQM2neiRtvTD1BKKiC0enMe3IUhTCYpZUWCYzzOk1WU%2B9vTk0DIO8Zh%2BhKn52TM6FwjjvJD1ycgJbEe8hLrIKyrfqKtNIuEc9cDQ7sweHAHPPUTCXF%2FUlghSHnTSqybTFU5QKsZqTedpYjrHuNM8eTsXRNEck%2FDkb3WYkd8hUqXV%2F2HUwelDg6CpBpFB8xbPPxv1QvyfT0tfkwXfusCztQouwOsUEZLAxSCvX0flllf5AuXhROO6KO09jQGo%2B8qsSOzkaL1%2Bl4h6uQkpkEEtufhez7%2FDtY84Fwm3Hlud1vKvCuooK1cD25ug3XftRCeI5WYBescIIng%3D%3D)
+![Calculator Demo]
+<iframe allow="autoplay; gyroscope;" allowfullscreen height="100%" referrerpolicy="strict-origin" src="https://www.kapwing.com/e/65188f7673fd5094916d0ec2?autoplay=true" style="border:0; height:100%; left:0; overflow:hidden; position:absolute; top:0; width:100%" title="Embedded content made on Kapwing" width="100%"></iframe>
+
+<p style="font-size: 12px; text-align: right;">Video edited on <a href="https://www.kapwing.com/video-editor">Kapwing</a></p>
+
 
 ## Table of Contents
 
