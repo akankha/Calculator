@@ -15,6 +15,13 @@
   <a href="#contributing">Contributing</a> •
 </p>
 
+## Demo
+
+You can view the live demo of the Calculator [here](https://akankha.github.io/Calculator/).
+
+![Calculator Demo](https://raw.githubusercontent.com/akankha/Calculator/main/preview.gif)
+
+
 ## Description
 
 This web application is a modern and responsive calculator built with React. It provides a clean and intuitive user interface for performing basic arithmetic calculations.
