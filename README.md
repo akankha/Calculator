@@ -5,10 +5,7 @@ Certainly! Here's a sample README.md for your GitHub repository "Calculator" bui
 
 A simple calculator web application built using React with state management through `useReducer`, component composition, and event handling.
 
-![Calculator Demo]
-<iframe allow="autoplay; gyroscope;" allowfullscreen height="100%" referrerpolicy="strict-origin" src="https://www.kapwing.com/e/65188f7673fd5094916d0ec2?autoplay=true" style="border:0; height:100%; left:0; overflow:hidden; position:absolute; top:0; width:100%" title="Embedded content made on Kapwing" width="100%"></iframe>
-
-<p style="font-size: 12px; text-align: right;">Video edited on <a href="https://www.kapwing.com/video-editor">Kapwing</a></p>
+![Calculator Demo] (https://www.kapwing.com/e/65188f7673fd5094916d0ec2)
 
 
 ## Table of Contents
