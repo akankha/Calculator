@@ -17,7 +17,7 @@
 
 ## Demo
 
-You can view the live demo of the Calculator [here](https://akankha.github.io/Calculator/).
+You can view the live demo of the Calculator [here](https://demo.akankha.com/calculator/).
 
 ![Calculator Demo](https://raw.githubusercontent.com/akankha/Calculator/main/preview.gif)
 
