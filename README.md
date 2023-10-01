@@ -8,6 +8,7 @@ A simple calculator web application built using React with state management thro
 ![Calculator Demo](https://raw.githubusercontent.com/akankha/Calculator/main/preview.gif)
 
 
+
 ## Table of Contents
 
 - [Demo](#demo)
